@@ -1,24 +1,25 @@
-// TODO: Write code to define and export the Employee class
+//creating "parent"
+//the following constuctors will be inherited by the "children"
 class Employee {
     constructor(name, id, email) {
         this.name = name;
         this.id = id;
         this.email = email;
     }
-    getName() { 
+    getName() {
         return this.name;
     }
 
-    getId(){
+    getId() {
         return this.id;
     }
-    getEmail(){
+    getEmail() {
         return this.email;
     }
-
+    //default employee role
     getRole() {
         return "Employee";
-    } // Returns 'Employee'
+    }
 }
 
 module.exports = Employee;
