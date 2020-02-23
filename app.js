@@ -8,7 +8,8 @@ const ManagerHtml = require("./Develop/templates/manager");
 const EngineerHtml = require("./Develop/templates/engineer");
 const InternHtml = require("./Develop/templates/intern");
 const teamHtml = require("./Develop/templates/team");
-//generates the
+
+//generates the unique employee id number
 let id = 1;
 let team = [];
 
@@ -21,6 +22,7 @@ const userQuestions = () => {
         choices: ["Manager", "Engineer", "Intern", "Quit"] //allows user to choose which employee to add to team
     }]).then(function (input) {
 
+        //determines which questions should be generated based on user selection
         switch (input.employeeType) {
             case "Manager":
                 addManager();
@@ -31,7 +33,7 @@ const userQuestions = () => {
             case "Intern":
                 addIntern();
                 break;
-            default:
+            default://if the user chooses to quit, the html will be generated
                 generateHtml();
                 break;
         }
@@ -66,7 +68,7 @@ const addManager = () => {
         team.push(manager);
 
         console.log(team);
-        userQuestions(); //calling the userQuestions functions to generate the employee list
+        userQuestions(); //calling the userQuestions functions to generate the prompt 
     });
 
 }
@@ -97,8 +99,7 @@ const addIntern = () => {
 }
 
 const addEngineer = () => {
-    inquirer
-        .prompt([{
+    inquirer.prompt([{
                 type: "input",
                 name: "engineerName",
                 message: "What is your engineer's name?"
