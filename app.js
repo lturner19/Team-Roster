@@ -1,4 +1,3 @@
-
 const Manager = require("./Develop/lib/Manager");
 const Engineer = require("./Develop/lib/Engineer");
 const Intern = require("./Develop/lib/Intern");
@@ -9,6 +8,7 @@ const ManagerHtml = require("./Develop/templates/manager");
 const EngineerHtml = require("./Develop/templates/engineer");
 const InternHtml = require("./Develop/templates/intern");
 const teamHtml = require("./Develop/templates/team");
+//generates the
 let id = 1;
 let team = [];
 
@@ -18,8 +18,9 @@ const userQuestions = () => {
         type: "list",
         name: "employeeType",
         message: "Which type of team member would you like to add?",
-        choices: ["Manager", "Engineer", "Intern", "Quit"]
+        choices: ["Manager", "Engineer", "Intern", "Quit"] //allows user to choose which employee to add to team
     }]).then(function (input) {
+
         switch (input.employeeType) {
             case "Manager":
                 addManager();
@@ -44,7 +45,7 @@ const addManager = () => {
             name: "managerName",
             message: "What is your manager's name?"
         },
-      
+
         {
             type: "input",
             name: "managerEmail",
@@ -55,28 +56,28 @@ const addManager = () => {
             name: "managerOfficeNumber",
             message: "What is your manager's office number?"
         },
-        
+
     ]).then(function (input) {
 
         //obtaining user input from questions answered
-       const manager = new Manager(input.managerName, id++, input.managerEmail, input.managerOfficeNumber); 
-       
-       //pushing the manager to the empty global team array
-       team.push(manager);
+        const manager = new Manager(input.managerName, id++, input.managerEmail, input.managerOfficeNumber);
 
-       console.log(team);
-       userQuestions(); //calling the userQuestions function
+        //pushing the manager to the empty global team array
+        team.push(manager);
+
+        console.log(team);
+        userQuestions(); //calling the userQuestions functions to generate the employee list
     });
 
 }
 
-let addIntern = () => {
+const addIntern = () => {
     inquirer.prompt([{
             type: "input",
             name: "internName",
             message: "What is your intern's name?"
         },
-       
+
         {
             type: "input",
             name: "internEmail",
@@ -85,7 +86,7 @@ let addIntern = () => {
         {
             type: "input",
             name: "school",
-            message: "What school does your intern go to?"
+            message: "What school does your intern attend?"
         }
     ]).then(function (input) {
         const intern = new Intern(input.internName, id++, input.internEmail, input.school);
@@ -94,7 +95,7 @@ let addIntern = () => {
         userQuestions();
     });
 }
- 
+
 const addEngineer = () => {
     inquirer
         .prompt([{
@@ -102,7 +103,7 @@ const addEngineer = () => {
                 name: "engineerName",
                 message: "What is your engineer's name?"
             },
-            
+
             {
                 type: "input",
                 name: "engineerEmail",
@@ -116,34 +117,36 @@ const addEngineer = () => {
         ])
         .then(function (input) {
             const engineer = new Engineer(input.engineerName, id++, input.engineerEmail, input.engineerGitHub);
-          
-       team.push(engineer);
 
-       console.log(team);
-       userQuestions();
+            team.push(engineer);
+
+            console.log(team);
+            userQuestions();
         });
+}
+
+const generateHtml = () => { //when the user is done inputing team members, this function will generate html 
+    let html = "";
+    let finalHtml = teamHtml(team);
+
+
+    for (let i = 0; i < team.length; i++) { //this will allow the team members to be concated in the team.html 
+
+        if (team[i].getRole() === "Manager") {
+            html += ManagerHtml(team[i]);
+        } else if (team[i].getRole() === "Engineer") {
+            html += EngineerHtml(team[i]);
+        } else if (team[i].getRole() === "Intern") {
+            html += InternHtml(team[i]);
+        }
     }
-
-const generateHtml = () =>  {//when the user is done inputing team members, this function will generate html 
-            let html = "";
-            let finalHtml = teamHtml(html)
-
-            for (let i = 0; i < team.length; i++) {//this will allow the team members to be concated in the team.html 
-                 
-                if(team[i].getRole() === "Manager"){
-                    html+= ManagerHtml(team[i]);
-                }
-                else if (team[i].getRole() === "Engineer") {
-                    html+=EngineerHtml(team[i]);
-                }
-                else if (team[i].getRole() === "Intern") {
-                    html+=InternHtml(team[i]);
-                }
-            }
-            fs.writeFile("./index.html", finalHtml, function(error, data) {
-                
-            })
-        }​
+    fs.writeFile("./team.html", finalHtml, function (err) {
+        if (err) {
+            console.log(err);
+        }
+        console.log("Successfully written to team.html");
+    })
+}
 
 
 userQuestions();
