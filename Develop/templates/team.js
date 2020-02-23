@@ -1,9 +1,8 @@
-function team (team) {
+//template literal to hold all team members
+function team(team) {
     return `
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +13,6 @@ function team (team) {
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
-
 <body>
     <div class="container-fluid">
         <div class="row">
