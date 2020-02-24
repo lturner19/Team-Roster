@@ -3,8 +3,8 @@ const employee = require("./Employee");
 
 class Intern extends employee {
     constructor(name, id, email, school) {
-        super(name, id, email); //inherited from parent
-        this.school = school; //unique for this employee
+        super(name, id, email); //inherited from employee
+        this.school = school; //unique for intern
         
         //generated if user does not supply answer to the questions
         if (!name) {

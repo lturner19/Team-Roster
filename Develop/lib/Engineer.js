@@ -2,8 +2,8 @@ const employee = require("./Employee");
 
 class Engineer extends employee { // extending the employee "parent" info
   constructor(name, id, email, github) {
-    super(name, id, email); //parent constructors
-    this.github = github; //unique to this employee
+    super(name, id, email); //inherited from employee
+    this.github = github; //unique to engineer
 
     //generated if user does not supply answer to the questions
     if (!name) {

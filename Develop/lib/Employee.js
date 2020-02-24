@@ -1,5 +1,5 @@
 //creating "parent"
-//the following constuctors will be inherited by the "children"
+//the following constructors will be inherited by the "children"
 class Employee {
     constructor(name, id, email) {
         this.name = name;
