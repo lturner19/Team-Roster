@@ -5,6 +5,7 @@ class Engineer extends employee { // extending the employee "parent" info
     super(name, id, email); //parent constructors
     this.github = github; //unique to this employee
 
+    //generated if user does not supply answer to the questions
     if (!name) {
       throw new Error("Please enter employee's name.");
     }

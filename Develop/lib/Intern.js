@@ -5,7 +5,8 @@ class Intern extends employee {
     constructor(name, id, email, school) {
         super(name, id, email); //inherited from parent
         this.school = school; //unique for this employee
-
+        
+        //generated if user does not supply answer to the questions
         if (!name) {
             throw new Error("Please enter employee's name.");
         }

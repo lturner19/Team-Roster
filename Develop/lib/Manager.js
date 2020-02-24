@@ -1,4 +1,3 @@
-
 const employee = require("./Employee");
 
 class Manager extends employee {
@@ -6,6 +5,7 @@ class Manager extends employee {
         super(name, id, email);
         this.officeNumber = officeNumber;
         
+        //generated if user does not supply answer to the questions
         if(!name) {
             throw new Error("Please enter employee's name.");
         }
