@@ -10,7 +10,7 @@ return `
         <ul class="list-group">
             <li class="list-group-item">ID: ${data.id}</li>
             <li class="list-group-item">Email: <a href="mailto:${data.email}">${data.email}</a></li>
-            <li class="list-group-item">School: ${data.school}</li>
+            <li class="list-group-item">School: ${data.college}</li>
         </ul>
     </div>
 </div>
