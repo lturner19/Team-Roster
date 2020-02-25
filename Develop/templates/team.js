@@ -1,5 +1,5 @@
 //template literal to hold all team members
-function team(team) {
+function teamRoster(team) {
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -33,3 +33,5 @@ function team(team) {
 </html>
 `
 }
+
+module.exports = teamRoster;
