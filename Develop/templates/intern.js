@@ -16,3 +16,5 @@ return `
 </div>
 `
 }
+
+module.exports = intern;
