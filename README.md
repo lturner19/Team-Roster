@@ -6,18 +6,47 @@
 
 <br>
 
-## FEATURES
+
+## TABLE OF CONTENTS
+
+1. [USAGE](#usage)
+2. [FEATURES](#features)
+3. [INSTALLATION](#installation)
+4. [PREVIEW](#preview)
+5. [RESOURCES](#resources)
+6. [BADGES](#Badges)
+
+
+<br>
+
+## USAGE
 
 Users can generate an engineering team using this node command line application.  
-The application will prompt users to provide information about a manager, engineer(s), and intern(s).  
+Based on the user's selections and answers the application can generate a manager, engineer(s), and intern(s).  
 
+<br>
 
+## FEATURES
+
+Users can view the Node CLI generated employee roster in a html format that displays each team member with the following information:
+
+* Name
+
+* Role
+
+* ID number
+
+* Role-specific property
+
+    * Manager: office number
+    * Engineer: GitHub username
+    * Intern: College currently attending
 
 <br>
 
 ## INSTALLATION
 
-To run this program the following must install (npm install) the following dependencies:
+To run this program install (npm install) the following dependencies:
 
 1. **Inquirer:**  collects input from the user
 
@@ -37,7 +66,13 @@ To run this program the following must install (npm install) the following depen
 
 
 
+Badges for Markdown
+
+***Naereen Badges:*** https://github.com/Naereen/badges
+
 <br>
 
 ### BADGES
 [![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://lturner19.github.io/Team-Roster/)
+
+[![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com)
