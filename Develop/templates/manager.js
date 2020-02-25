@@ -8,12 +8,12 @@ function manager(data) {
     <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: ${data.id}</li>
-            <li class="list-group-item">Email: <a href="mailto:${data.email}">${
-    data.email
-  }</a></li>
+            <li class="list-group-item">Email: <a href="mailto:${data.email}">${data.email}</a></li>
             <li class="list-group-item">Office number: ${data.officeNumber}</li>
         </ul>
     </div>
 </div>
 `;
 }
+
+module.exports = manager;
