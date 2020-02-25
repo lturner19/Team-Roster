@@ -2,9 +2,9 @@
 const employee = require("./Employee");
 
 class Intern extends employee {
-    constructor(name, id, email, school) {
+    constructor(name, id, email, college) {
         super(name, id, email); //inherited from employee
-        this.school = school; //unique for intern
+        this.school = college; //unique for intern
         
         //generated if user does not supply answer to the questions
         if (!name) {
@@ -14,12 +14,12 @@ class Intern extends employee {
             throw new Error("Please enter the employee's email")
         }
         if (!school) {
-            throw new Error("Please enter the school the intern is attending.");
+            throw new Error("Please enter the college the intern is attending.");
         }
     }
 
     getSchool() {
-        return this.school;
+        return this.college;
     }
     getRole() {
         return "Intern";
