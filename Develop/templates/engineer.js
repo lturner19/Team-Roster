@@ -1,8 +1,8 @@
 function engineer(data){
     return `
 <div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">${data.name}}</h2>
+    <div class="card-header bg-primary text-white">
+        <h2 class="card-title">${data.name}</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${data.getRole()}</h3>
     </div>
     <div class="card-body">
