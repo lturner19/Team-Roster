@@ -6,7 +6,7 @@ class Intern extends employee {
         super(name, id, email); //inherited from employee
         this.college = college; //unique for intern
         
-        //generated if user does not supply answer to the questions
+        //validation generated if user does not supply answer to the questions
         if (!name) {
             throw new Error("Please enter employee's name.");
         }
@@ -21,6 +21,7 @@ class Intern extends employee {
     getSchool() {
         return this.college;
     }
+    
     getRole() {
         return "Intern";
     };
