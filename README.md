@@ -11,9 +11,10 @@ As a manager I want to use Node CLI to create a template for creating my enginee
 1. [USAGE](#usage)
 2. [FEATURES](#features)
 3. [INSTALLATION](#installation)
-4. [PREVIEW](#preview)
-5. [RESOURCES](#resources)
-6. [BADGES](#Badges)
+4. [TESTS](#tests)
+5. [PREVIEW](#preview)
+6. [RESOURCES](#resources)
+7. [BADGES](#Badges)
 
 
 <br>
@@ -55,6 +56,15 @@ To run this program install (npm install) the following dependencies:
 
 
 To initiate question prompt: **npm start**
+
+<br>
+
+## TESTS
+
+There are tests availble for the main employee file and all three (3) employee types located in the test folder.
+To run the test: **npm run test**
+
+Currently all tests are passing.
 
 <br>
 
