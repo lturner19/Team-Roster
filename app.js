@@ -9,16 +9,19 @@ const EngineerHtml = require("./Develop/templates/engineer");
 const InternHtml = require("./Develop/templates/intern");
 const teamHtml = require("./Develop/templates/team");
 
-//generates the unique employee id number
-let id = 1;
+
+//generates employee id automatically
+let id = 1
+
+//empty array to hold team members
 let team = [];
 
 //creates the list for the user to pick which team member should be added
 const userQuestions = () => {
     inquirer.prompt([{
-        type: "list",
+        type: "list", 
         name: "employeeType",
-        message: "Which type of team member would you like to add?",
+        message: "Please build your team",
         choices: ["Manager", "Engineer", "Intern", "Quit"] //allows user to choose which employee to add to team
     }]).then(function (input) {
 
@@ -33,7 +36,7 @@ const userQuestions = () => {
             case "Intern":
                 addIntern();
                 break;
-            default://if the user chooses to quit, the html will be generated
+            default: //if the user chooses to quit, the html will be generated
                 generateHtml();
                 break;
         }
@@ -61,7 +64,7 @@ const addManager = () => {
 
     ]).then(function (input) {
 
-        //obtaining user input from questions answered
+
         const manager = new Manager(input.managerName, id++, input.managerEmail, input.managerOfficeNumber);
 
         //pushing the manager to the empty global team array
@@ -79,7 +82,6 @@ const addIntern = () => {
             name: "internName",
             message: "What is your intern's name?"
         },
-
         {
             type: "input",
             name: "internEmail",
@@ -87,11 +89,11 @@ const addIntern = () => {
         },
         {
             type: "input",
-            name: "school",
-            message: "What school does your intern attend?"
+            name: "college",
+            message: "What college does your intern attend?"
         }
     ]).then(function (input) {
-        const intern = new Intern(input.internName, id++, input.internEmail, input.school);
+        const intern = new Intern(input.internName, id++, input.internEmail, input.college);
         team.push(intern);
         console.log(team);
         userQuestions();
@@ -128,9 +130,7 @@ const addEngineer = () => {
 
 const generateHtml = () => { //when the user is done inputing team members, this function will generate html 
     let html = "";
-    let finalHtml = teamHtml(team);
-
-
+ 
     for (let i = 0; i < team.length; i++) { //this will allow the team members to be concated in the team.html 
 
         if (team[i].getRole() === "Manager") {
@@ -141,7 +141,7 @@ const generateHtml = () => { //when the user is done inputing team members, this
             html += InternHtml(team[i]);
         }
     }
-    fs.writeFile("./team.html", finalHtml, function (err) {
+      fs.writeFile("./team.html", teamHtml(html), function (err) {
         if (err) {
             console.log(err);
         }
