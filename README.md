@@ -59,6 +59,11 @@ To run this program install (npm install) the following dependencies:
 
 ![image](assets/generated_team.jpg)
 
+<br><br>
+<img src="assets\Node_CLI_Generated_Team_Roster.gif">
+
+
+
 <br>
 
 ### RESOURCES
@@ -71,6 +76,11 @@ CSS Framework
 Icons:
 
 ***Font Awesome:*** https://fontawesome.com/icons/save
+
+<br>
+Gif recording
+
+***Screencastify***: Google extension
 
 <br>
 Badges for Markdown
