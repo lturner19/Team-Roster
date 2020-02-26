@@ -19,7 +19,7 @@ let team = [];
 //creates the list for the user to pick which team member should be added
 const userQuestions = () => {
     inquirer.prompt([{
-        type: "list", 
+        type: "list",
         name: "employeeType",
         message: "Please build your team",
         choices: ["Manager", "Engineer", "Intern", "Quit"] //allows user to choose which employee to add to team
@@ -119,8 +119,10 @@ const addEngineer = () => {
             }
         ])
         .then(function (input) {
+
             const engineer = new Engineer(input.engineerName, id++, input.engineerEmail, input.engineerGitHub);
 
+            //pushing new team member to the empty array
             team.push(engineer);
 
             console.log(team);
@@ -129,9 +131,11 @@ const addEngineer = () => {
 }
 
 const generateHtml = () => { //when the user is done inputing team members, this function will generate html 
+    //holds the complete team selected by
     let html = "";
- 
-    for (let i = 0; i < team.length; i++) { //this will allow the team members to be concated in the team.html 
+
+    //looks for selections, if applicable, and adds them to the html 
+    for (let i = 0; i < team.length; i++) {
 
         if (team[i].getRole() === "Manager") {
             html += ManagerHtml(team[i]);
@@ -140,11 +144,12 @@ const generateHtml = () => { //when the user is done inputing team members, this
         } else if (team[i].getRole() === "Intern") {
             html += InternHtml(team[i]);
         }
-    }
-      fs.writeFile("./index.html", teamHtml(html), function (err) {
+    } //generating the index file, inserts the teams
+    fs.writeFile("./index.html", teamHtml(html), function (err) {
         if (err) {
+            //only shows if there is an error
             console.log(err);
-        }
+        } // will be shown if file was successfully created
         console.log("Successfully written to index.html");
     })
 }
