@@ -52,7 +52,10 @@ To run this program install (npm install) the following dependencies:
 2. **Jest:**  runs the provided tests
     
     -to run tests in the terminal = npm run test
-    
+
+
+To initiate question prompt: **npm start**
+
 <br>
 
 ### PREVIEW
