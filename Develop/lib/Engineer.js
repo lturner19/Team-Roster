@@ -1,11 +1,12 @@
+//importing from "Employee.js"
 const employee = require("./Employee");
 
-class Engineer extends employee { // extending the employee "parent" info
+class Engineer extends employee { // extending the employee "parent" constructors
   constructor(name, id, email, github) {
-    super(name, id, email); //inherited from employee
+    super(name, id, email); //inherited from employee 
     this.github = github; //unique to engineer
 
-    //generated if user does not supply answer to the questions
+    //validation generated if user does not supply answer to the questions
     if (!name) {
       throw new Error("Please enter employee's name.");
     }
