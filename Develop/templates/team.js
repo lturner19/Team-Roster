@@ -1,4 +1,7 @@
 //template literal to hold all team members
+//The answers obtained from the user prompted questions are obtained in the app.js file.
+//The team is then written to this file and displayed to the user.
+
 function teamRoster(team) {
     return `
 <!DOCTYPE html>
@@ -24,7 +27,7 @@ function teamRoster(team) {
     <div class="container">
         <div class="row">
             <div class="team-area col-12 d-flex justify-content-center">
-                ${team}
+                ${team} 
             </div>
         </div>
     </div>
