@@ -1,3 +1,4 @@
+//converted from html file to js, to turn the bottom portion to template literal
 function manager(data) {
   return `
 <div class="card employee-card">
