@@ -62,6 +62,7 @@ To initiate question prompt: **npm start**
 ## TESTS
 
 There are tests availble for the main employee file and all three (3) employee types located in the test folder.
+
 To run the test: **npm run test**
 
 Currently all tests are passing.
