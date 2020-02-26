@@ -141,11 +141,11 @@ const generateHtml = () => { //when the user is done inputing team members, this
             html += InternHtml(team[i]);
         }
     }
-      fs.writeFile("./team.html", teamHtml(html), function (err) {
+      fs.writeFile("./index.html", teamHtml(html), function (err) {
         if (err) {
             console.log(err);
         }
-        console.log("Successfully written to team.html");
+        console.log("Successfully written to index.html");
     })
 }
 
