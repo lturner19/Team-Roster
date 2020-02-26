@@ -80,6 +80,9 @@ Badges for Markdown
 <br>
 
 ### BADGES
-[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://lturner19.github.io/Team-Roster/)
+Please click badge below 
+
+[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://lturner19.github.io/professional_portfolio/#portfolio)
 
 [![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com)
+
