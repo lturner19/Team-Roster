@@ -1,8 +1,7 @@
 # TEAM ROSTER
 
 ## INTRODUCTION
-
-
+As a manager I want to use Node CLI to create a template for creating my engineer team roster.
 
 <br>
 
@@ -58,14 +57,22 @@ To run this program install (npm install) the following dependencies:
 
 ### PREVIEW
 
-![image]()
+![image](assets/generated_team.jpg)
 
 <br>
 
 ### RESOURCES
 
+CSS Framework
 
+***Bootstrap 4:*** https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
+<br>
+Icons:
+
+***Font Awesome:*** https://fontawesome.com/icons/save
+
+<br>
 Badges for Markdown
 
 ***Naereen Badges:*** https://github.com/Naereen/badges
