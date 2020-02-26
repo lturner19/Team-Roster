@@ -73,14 +73,14 @@ CSS Framework
 ***Bootstrap 4:*** https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
 <br>
-Icons:
+Icons
 
 ***Font Awesome:*** https://fontawesome.com/icons/save
 
 <br>
 Gif recording
 
-***Screencastify***: Google extension
+***Screencastify:*** Google extension
 
 <br>
 Badges for Markdown
