@@ -16,20 +16,56 @@ let id = 1
 //empty array to hold team members
 let team = [];
 
+//allows user to input manager's info, this will only generate 1 manager
+const userManager = () => {
+inquirer.prompt([{
+    type: "input",
+    name: "managerName",
+    message: "What is your manager's name?"
+},
+
+{
+    type: "input",
+    name: "managerEmail",
+    message: "What is your manager's email?"
+},
+{
+    type: "input",
+    name: "managerOfficeNumber",
+    message: "What is your manager's office number?"
+},
+
+]).then(function (input) {
+
+
+const manager = new Manager(input.managerName, id++, input.managerEmail, input.managerOfficeNumber);
+
+//pushing the manager to the empty global team array
+team.push(manager);
+
+console.log(team);
+userQuestions(); //calling the userQuestions functions to generate the prompt 
+});
+
+}
+
+
 //creates the list for the user to pick which team member should be added
-const userQuestions = () => {
+ const userQuestions = () => {
     inquirer.prompt([{
         type: "list",
         name: "employeeType",
         message: "Please build your team",
-        choices: ["Manager", "Engineer", "Intern", "Quit"] //allows user to choose which employee to add to team
+        //allows user to choose which employee to add to team
+        choices: ["Engineer", "Intern", "Quit"] //could add "Manager to generate more than one"
     }]).then(function (input) {
 
         //determines which questions should be generated based on user selection
         switch (input.employeeType) {
-            case "Manager":
-                addManager();
-                break;
+        //The following code could be used to generate more than one manager
+            //case "Manager":
+            // addManager();
+            //break;
             case "Engineer":
                 addEngineer();
                 break;
@@ -41,10 +77,11 @@ const userQuestions = () => {
                 break;
         }
     });
-}
+} 
 
-//allows user to input manager's info
-const addManager = () => {
+
+//if adding more than one manager use this function
+/* const addManager = () => { // 
     inquirer.prompt([{
             type: "input",
             name: "managerName",
@@ -74,7 +111,7 @@ const addManager = () => {
         userQuestions(); //calling the userQuestions functions to generate the prompt 
     });
 
-}
+} */
 
 const addIntern = () => {
     inquirer.prompt([{
@@ -155,4 +192,6 @@ const generateHtml = () => { //when the user is done inputing team members, this
 }
 
 
-userQuestions();
+userManager();
+
+//if using code to generate more than one manager, call userQuestions(); instead
