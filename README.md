@@ -14,7 +14,7 @@ As a manager I want to use Node CLI to create a template for creating my enginee
 4. [TESTS](#tests)
 5. [PREVIEW](#preview)
 6. [RESOURCES](#resources)
-7. [BADGES](#Badges)
+7. [BADGES](#badges)
 
 
 <br>
